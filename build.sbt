@@ -25,7 +25,6 @@ val PhantomVersion = "1.21.0"
 libraryDependencies ++= {
   Seq(
     "com.typesafe"                   % "config"                  % "1.2.1",
-    "com.websudos"                   %% "phantom-connectors"     % PhantomVersion,
     "com.websudos"                   %% "phantom-dsl"            % PhantomVersion,
     "com.websudos"                   %% "phantom-testkit"        % "1.12.2" % "test, provided"
   )

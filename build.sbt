@@ -29,3 +29,11 @@ libraryDependencies ++= {
     "com.websudos"                   %% "phantom-testkit"        % "1.12.2" % "test, provided"
   )
 }
+
+assemblyMergeStrategy in assembly := {
+  case "META-INF/io.netty.versions.properties" => MergeStrategy.first
+  case x =>
+    val oldStrategy = (assemblyMergeStrategy in assembly).value
+    oldStrategy(x)
+}
+

@@ -4,7 +4,7 @@ import com.websudos.phantom.connectors.{ContactPoints, KeySpaceDef}
 
 
 object Defaults {
-  val connector = ContactPoints(Seq("192.168.99.100")).keySpace("pwlan")
+  val connector = ContactPoints(Seq("192.168.99.100")).keySpace("zouzias")
 }
 
 class LocalDatabase(val keyspace: KeySpaceDef) extends com.websudos.phantom.db.DatabaseImpl(keyspace) {

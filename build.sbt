@@ -19,7 +19,7 @@ resolvers ++= Seq(
   Resolver.bintrayRepo("websudos", "oss-releases")
 )
 
-val PhantomVersion = "1.21.0"
+val PhantomVersion = "1.21.2"
 
 
 libraryDependencies ++= {

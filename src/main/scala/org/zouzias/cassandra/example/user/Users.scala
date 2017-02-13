@@ -14,7 +14,7 @@ case class User(
   registrationDate: DateTime
 )
 
-class Users extends CassandraTable[Users, User] {
+abstract class Users extends CassandraTable[Users, User] with RootConnector {
   object id extends UUIDColumn(this) with PartitionKey
   object email extends StringColumn(this)
   object name extends StringColumn(this)

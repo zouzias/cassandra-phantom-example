@@ -9,7 +9,7 @@ object Defaults {
 }
 
 class LocalDatabase(val keyspace: CassandraConnection) extends Database[LocalDatabase](keyspace) {
-  object users extends Users with keyspace.Connector
+  object users extends Users with Connector
 }
 
 object LocalDatabase extends LocalDatabase(Defaults.connector)

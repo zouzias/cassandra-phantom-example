@@ -1,11 +1,8 @@
 package org.zouzias.cassandra.example.user
 
-import java.util.UUID
-
-import com.outworkers.phantom.connectors.KeySpace
-import org.joda.time.DateTime
-
 import scala.concurrent.ExecutionContext
+import com.outworkers.phantom.connectors.KeySpace
+import com.outworkers.util.testing._
 
 /**
   * Example from http://blog.websudos.com/2015/04/04/a-series-on-phantom-part-1-getting-started-with-phantom/
@@ -18,7 +15,7 @@ object UsersExampleMain extends App{
 
   LocalDatabase.create()
 
-  val user = User(UUID.randomUUID(), "zouzias@swisscom.com", "Tassos Zouzias", new DateTime())
+  val user = gen[User]
   LocalDatabase.users.store(user)
 
   val returnedUser = LocalDatabase.users.getLimit(1)

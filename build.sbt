@@ -2,31 +2,22 @@ name := "phantom-dsl-example"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 organization := "org.zouzias"
 
 resolvers ++= Seq(
-  "Confluent" at "http://packages.confluent.io/maven/",
-  "Typesafe repository snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
-  "Typesafe repository releases" at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype repo"                    at "https://oss.sonatype.org/content/groups/scala-tools/",
-  "Sonatype releases"                at "https://oss.sonatype.org/content/repositories/releases",
-  "Sonatype snapshots"               at "https://oss.sonatype.org/content/repositories/snapshots",
-  "Sonatype staging"                 at "http://oss.sonatype.org/content/repositories/staging",
-  "Java.net Maven2 Repository"       at "http://download.java.net/maven/2/",
-  "Twitter Repository"               at "http://maven.twttr.com",
-  Resolver.bintrayRepo("websudos", "oss-releases")
+  "Confluent" at "http://packages.confluent.io/maven/"
 )
 
-val PhantomVersion = "1.21.2"
-
+val phantom = "2.1.3"
+val util = "0.28.3"
 
 libraryDependencies ++= {
   Seq(
-    "com.typesafe"                   % "config"                  % "1.2.1",
-    "com.websudos"                   %% "phantom-dsl"            % PhantomVersion,
-    "com.websudos"                   %% "phantom-testkit"        % "1.12.2" % "test, provided"
+    "com.typesafe" % "config" % "1.2.1",
+    "com.outworkers" %% "phantom-dsl" % phantom,
+    "com.outworkers" %% "util-testing" % util
   )
 }
 
